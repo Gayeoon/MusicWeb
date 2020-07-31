@@ -13,10 +13,23 @@
 	src: url('../fonts/NanumSquare_acEB.ttf')format('truetype');
 }
 
+@font-face {
+	font-family: cafe_bold;
+	src: url('../fonts/Cafe24Decobox.ttf')format('truetype');
+}
+
 body {
 	font-family: nanum_middle;
 	display:flex;
-	flex-direction:column
+	flex-direction:column;
+}
+
+.sticky_nav header{
+	font-family: cafe_bold;
+	font-size: 3.5em; 
+	color: #9933CC;
+	padding-top:0.3em;
+	padding-left:0.7em;
 }
 
 /* common */ 
@@ -70,17 +83,14 @@ nav ul li a:hover {
 
 .MVstyle header {
 	font-family: nanum_ebold;
-	font-size: 1.3em; 
+	font-size: 1.5em; 
 	color: #9933CC;
 }
 
-.box {
-	border-style:solid;
-	border-color:black;
+.box img {
+	width:100%;
 }
-
 .first {
-    border: 1px solid red;
     float: left;
     width:17%;
     box-sizing: border-box;
@@ -92,7 +102,6 @@ nav ul li a:hover {
 }
 
 .second{
-    border: 1px solid green;
     float: left; 
     margin-left: 3.7%;
     width:17%;
@@ -105,7 +114,6 @@ nav ul li a:hover {
 }
 
 .third{
-    border: 1px solid blue;
     float: right;
     width:17%;
     box-sizing: border-box;
@@ -117,12 +125,102 @@ nav ul li a:hover {
 }
 
 .Musicstyle{
-    width: 95%;
+    width: 96%;
     margin: 10px auto;
+	flex-direction:column;
+	float:left;
 }
 
 .Musicstyle header {
 	font-family: nanum_ebold;
-	font-size: 1.3em; 
+	font-size: 1.5em; 
 	color: #9933CC;
+}
+
+.tableDiv {
+	width:49%;
+	float:left;
+}
+
+.musicTable {
+	width:100%;
+	text-align:center;
+}
+
+.musicTable td {
+	padding-top:0.5em;
+	padding-right:0.8em;
+	vertical-align:middle;
+	display: flex;
+    align-items: center;
+}
+
+#musicImg {
+	width:8%;
+	float:left;
+}
+
+#musicNum {
+	text-align:right;
+	font-family:nanum_ebold;
+	margin-right:20px;
+	width:4%;
+	float:left;
+	font-size:1.2em;
+}
+
+#musicPlus {
+	color:blue;
+	text-align:center;
+	font-family:nanum_ebold;
+	width:5%;
+	float:left;
+	font-size:0.8em;
+	margin-left:1%;
+}
+
+#musicMinus {
+	color:red;
+	text-align:center;
+	font-family:nanum_ebold;
+	width:5%;
+	float:left;
+	font-size:0.8em;
+	margin-left:1%;
+}
+
+#musicName {
+	text-align:left;
+	font-family:nanum_bold;
+	width:35%;
+	vertical-align:center;
+	float:left;
+	font-size:1.2em;
+}
+
+#musicSinger {
+	text-align:center;
+	text-align:left;
+	font-family:nanum_bold;
+	color:#555f66;
+	margin-left:2%;
+	width:29%;
+	float:left;
+	font-size:0.9em;
+}
+
+.playBtn {
+	text-align:center;
+	width:4%;
+	margin-left:1%;
+	margin-right:2%;
+	float:left;
+}
+
+.heartBtn {
+	text-align:center;
+	margin:0em;
+	width:4%;
+	margin-left:1%;
+	float:left;
 }
