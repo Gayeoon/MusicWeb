@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Gayeon's WaterMelon</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />	
+		<link rel="stylesheet" href="css/MVStyle.css" />
+	</head>
+	<body>
+		<!-- Header -->
+			<header>
+				<!-- navigation --> 
+				<nav class="sticky_nav"> 
+					<header>
+						<p>WaterMelon</p>
+					</header>
+					<ul class="blog_menu"> 
+						<li><a href="main.html" style="color:#9933CC">뮤직홈</a></li> 
+						<li><a href="main.html">뮤직비디오</a></li> 
+						<li><a href="main.html">My 뮤직</a></li> 
+					</ul> 
+				</nav>
+			</header>
+			
+			<section class="MVstyle">
+				<header>
+					<div style="float:left">
+					<p>TWICE(트와이스) "FANCY" M/V</p>					
+					</div>
+				</header>
+				<div id="player"></div>
+			</section>
+		
+		<script>
+      // 2. This code loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '650em',
+          width: '1300em',
+          videoId: 'kOHB85vDuow',
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+      
+	  function onPlayerReady(event) {
+        //event.target.playVideo();
+      }
+	  
+      var done = false;
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+          setTimeout(stopVideo, 6000);
+          done = true;
+        }
+      }
+      function stopVideo() {
+        player.stopVideo();
+      }
+    </script>
+	</body>
+</html>
