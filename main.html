@@ -24,40 +24,39 @@
 
 			</header>
 			
+		<br/>
 		<section class="MVstyle">
 			<header>
 				<p>뮤직비디오</p>
 			</header>
 			<div class="first">
-				<div class="box">
-					<img src="images/again_s.png" alt="" />
+				<div class="box" id="player1">
 				</div>
 				<h4>다시 여기 바닷가</h4>
 				<p>싹쓰리</p>
 			</div>
 			<div class="second">
-				<div class="box">
-					<img src="images/maria_s.png" alt="" />
+				<div class="box" id="player2">
 				</div>
 				<h4>마리아 (Maria)</h4>
 				<p>화사 (Hwa sa)</p>
 			</div>
 			<div class="second">
-				<div class="box">
+				<div class="box" id="player3">
 					<img src="images/aloha_s.png" alt="" />
 				</div>
 				<h4>아로하</h4>
 				<p>조정석</p>
 			</div>
 			<div class="second">
-				<div class="box">
+				<div class="box" id="player4">
 					<img src="images/eight_s.png" alt="" />
 				</div>
 				<h4>에잇</h4>
 				<p>아이유</p>
 			</div>
 			<div class="third">
-				<div class="box">
+				<div class="box" id="player5">
 					<img src="images/dolphin_s.png" alt="" />
 				</div>
 				<h4>Dolphin</h4>
@@ -122,7 +121,7 @@
 					</tr>
 					<tr> 
 						<td>
-								<img id="musicImg" src="images/again_s.png" alt="" />
+								<img id="musicImg" src="images/dolphin_s.png" alt="" />
 								<p id="musicPlus">▲ 8</p>
 								<p id="musicNum">5</p>
 								<a id="musicName">Dolphin</a>
@@ -135,13 +134,13 @@
 				</table>
 			</div>
 			<div class="tableDiv">
-				<table class="musicTable"> 
+				<table class="musicTable" style="margin-left:2%"> 
 					<tr> 
 						<td>
 								<img id="musicImg" src="images/bts_s.png" alt="" />
 								<p id="musicMinus">▼ 2</p>
 								<p id="musicNum">6</p>
-								<a id="musicName">작은 것들을 위한 시(Boy With Luv..</a>
+								<a id="musicName">작은 것들을 위한 시(Boy W..</a>
 								<a id="musicSinger">방탄소년단</a>
 								<img src="images/play.png" alt="btnImages" class="playBtn" onclick="playBtn">
 								<img src="images/heart_e.png" alt="btnImages" class="heartBtn" onclick="heartBtn">
@@ -199,5 +198,92 @@
 				</table>
 			</div>
 		</section>	
+		    <div id="player" onclick="click()"></div>
+<div id="player2" onclick="click()"></div>
+		<script>
+      // 2. This code loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player1', {
+          height: '100%',
+          width: '100%',
+          videoId: 'ESKfHHtiSjs',
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+		
+		player = new YT.Player('player2', {
+          height: '100%',
+          width: '100%',
+          videoId: 'tDukIfFzX18',
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+		
+		player = new YT.Player('player3', {
+          height: '100%',
+          width: '100%',
+          videoId: '3DOkxQ3HDXE',
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+		
+		player = new YT.Player('player4', {
+          height: '100%',
+          width: '100%',
+          videoId: 'TgOu00Mf3kI',
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+		
+		player = new YT.Player('player5', {
+          height: '100%',
+          width: '100%',
+          videoId: 'oaRTMjLdiDw',
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+
+	function click(){
+		alert("등록되었습니다");
+	}
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        //event.target.playVideo();
+      }
+
+      // 5. The API calls this function when the player's state changes.
+      //    The function indicates that when playing a video (state=1),
+      //    the player should play for six seconds and then stop.
+      var done = false;
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+          setTimeout(stopVideo, 6000);
+          done = true;
+        }
+      }
+      function stopVideo() {
+        player.stopVideo();
+      }
+    </script>
 	</body>
 </html>
