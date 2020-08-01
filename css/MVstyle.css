@@ -1,0 +1,105 @@
+@font-face {
+	font-family: nanum_middle;
+	src: url('../fonts/NanumSquare_acR.ttf')format('truetype');
+}
+
+@font-face {
+	font-family: nanum_bold;
+	src: url('../fonts/NanumSquare_acB.ttf')format('truetype');
+}
+
+@font-face {
+	font-family: nanum_ebold;
+	src: url('../fonts/NanumSquare_acEB.ttf')format('truetype');
+}
+
+@font-face {
+	font-family: cafe_bold;
+	src: url('../fonts/Cafe24Decobox.ttf')format('truetype');
+}
+
+body {
+	font-family: nanum_middle;
+	display:flex;
+	flex-direction:column;
+}
+
+.sticky_nav header{
+	font-family: cafe_bold;
+	font-size: 3.8em; 
+	color: #9933CC;
+	padding-top:0.35em;
+	padding-left:0.6em;
+}
+
+/* common */ 
+ul { 
+list-style: none; 
+} 
+
+/* nav */ 
+nav {
+	display: flex; 
+	justify-content: center; 
+	align-items: center; 
+	height: 55px; 
+	margin-right: 1em;
+} 
+
+nav ul { 
+	flex: 1; 
+	display: flex; 
+	justify-content: flex-end; 
+	align-items: center; 
+	margin: 0; 
+} 
+
+nav ul li { 
+	padding: 0;
+	margin: 0; 
+	vertical-align: middle; 
+	text-align: center; 
+	float: left;
+} 
+
+nav ul li a { 
+	font-family: nanum_bold;
+	padding: 1em; 
+	font-size: 0.9em; 
+	display: flex; 
+	align-items: flex-end; 
+	color: #555f66;
+	text-decoration: none;
+}
+
+nav ul li a:hover { 
+	color: #a186bc;
+}
+
+.MVstyle{
+    width: 95%;
+    margin: 10px auto;
+	margin-top:2em;
+}
+
+.MVstyle{
+	text-align:center;
+	flex-direction:column;
+}
+
+.MVstyle header {
+	float:left;
+	font-family: nanum_ebold;
+	font-size: 1.5em; 
+	color: #555f66;
+	flex-direction:column;
+	vertical-align:center;
+	margin-bottom:1em;
+}
+
+
+#player {
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+}
