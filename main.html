@@ -204,32 +204,48 @@
  
       <!-- Modal content -->
       <div class="modal-content">
-        <span class="close">&times;</span>                                                               
-        <audio id="audio" src = "music/again.mp3" autoplay controls>
-			브라우저가 오디오를 지원하지 않습니다.
-		</audio>
+		<span class="close">&times;</span>                                                               
+        <audio id="myAudio"> <source src="music/again.mp3" type='audio/mp3'> <source src="http://media.w3.org/2010/07/bunny/04-Death_Becomes_Fur.oga" type='audio/ogg; codecs=vorbis'> Your user agent does not support the HTML5 Audio element. </audio> 
+		<button type="button" onclick="playPause(1)">Play</button> 
       </div>
- 
     </div>
 
 
-
 		<script>
+		function playPause(flag) { 
+			var myAudio = document.getElementById("myAudio"); 
+			if(flag == 1){
+				if (myAudio.paused) {
+					myAudio.play(); 
+				} else { 
+					myAudio.pause(); 
+				} 
+			}else if(flag ==2){
+				if (myAudio.played) {
+					myAudio.pause(); 
+				} 
+			}else{
+				myAudio.currentTime = 0;
+				myAudio.play();
+			}
+		}
 		
         var modal = document.getElementById('myModal');
         var btn = document.getElementById("myBtn");
         var span = document.getElementsByClassName("close")[0];                                          
- 
+		
 		function playBtn(id){
-			document.getElementById('audio').src = "file:///C:/Users/rkdus/Desktop/GayeonMusic/music/"+id+"";
+			playPause(3);
 			modal.style.display = "block";
 		}		
         span.onclick = function() {
+			playPause(2);
             modal.style.display = "none";
         }
  
         window.onclick = function(event) {
             if (event.target == modal) {
+				playPause(2);
                 modal.style.display = "none";
             }
         }
