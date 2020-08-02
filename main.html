@@ -187,7 +187,7 @@
 								<p id="musicNum">10</p>
 								<a id="musicName">HIP</a>
 								<a id="musicSinger">마마무(Mamamoo)</a>
-								<img src="images/play.png" alt="btnImages" class="playBtn" onclick="playBtn">
+								<img src="images/play.png" id="hip.mp3" alt="btnImages" class="playBtn" onclick="playBtn(this.id)">
 								<img src="images/heart_e.png" id="hip" alt="btnImages" class="heartBtn" onclick="heartBtn(this.id)">
 						
 						</td>
@@ -205,7 +205,9 @@
       <!-- Modal content -->
       <div class="modal-content">
         <span class="close">&times;</span>                                                               
-        <p>Some text in the Modal..</p>
+        <audio id="audio" src = "music/again.mp3" autoplay controls>
+			브라우저가 오디오를 지원하지 않습니다.
+		</audio>
       </div>
  
     </div>
@@ -218,10 +220,10 @@
         var btn = document.getElementById("myBtn");
         var span = document.getElementsByClassName("close")[0];                                          
  
-        btn.onclick = function() {
-            modal.style.display = "block";
-        }
- 
+		function playBtn(id){
+			document.getElementById('audio').src = "file:///C:/Users/rkdus/Desktop/GayeonMusic/music/"+id+"";
+			modal.style.display = "block";
+		}		
         span.onclick = function() {
             modal.style.display = "none";
         }
