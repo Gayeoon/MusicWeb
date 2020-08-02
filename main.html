@@ -7,7 +7,7 @@
 		<meta name="keywords" content="" />	
 		<link rel="stylesheet" href="css/mainStyle.css" />
 	</head>
-	<body>
+	<body onload="init();">
 		<!-- Header -->
 			<header>
 				<!-- navigation --> 
@@ -17,7 +17,7 @@
 					</header>
 					<ul class="blog_menu"> 
 						<li><a href="main.html" style="color:#9933CC">뮤직홈</a></li> 
-						<li><a href="main.html">뮤직비디오</a></li> 
+						<li><a href="mvpage.html">뮤직비디오</a></li> 
 						<li><a href="main.html">My 뮤직</a></li> 
 					</ul> 
 				</nav>
@@ -43,21 +43,18 @@
 			</div>
 			<div class="second">
 				<div class="box" id="player3">
-					<img src="images/aloha_s.png" alt="" />
 				</div>
 				<h4>아로하</h4>
 				<p>조정석</p>
 			</div>
 			<div class="second">
 				<div class="box" id="player4">
-					<img src="images/eight_s.png" alt="" />
 				</div>
 				<h4>에잇</h4>
 				<p>아이유</p>
 			</div>
 			<div class="third">
 				<div class="box" id="player5">
-					<img src="images/dolphin_s.png" alt="" />
 				</div>
 				<h4>Secret Garden(비밀정원)</h4>
 				<p>오마이걸</p>
@@ -79,7 +76,7 @@
 								<a id="musicName">다시 여기 바닷가</a>
 								<a id="musicSinger">싹쓰리(유두래곤&린다G&비룡)</a>
 								<img src="images/play.png" alt="btnImages" class="playBtn" onclick="playBtn">
-								<img src="images/heart.png" alt="btnImages" class="heartBtn" onclick="heartBtn">
+								<img src="images/heart_e.png" id="again" alt="btnImages" class="heartBtn" onclick="heartBtn(this.id)">
 						
 						</td>
 					</tr>
@@ -91,7 +88,7 @@
 								<a id="musicName">마리아 (Maria)</a>
 								<a id="musicSinger">화사(Hwa Sa)</a>
 								<img src="images/play.png" alt="btnImages" class="playBtn" onclick="playBtn">
-								<img src="images/heart_e.png" alt="btnImages" class="heartBtn" onclick="heartBtn">
+								<img src="images/heart_e.png" id="maria" alt="btnImages" class="heartBtn" onclick="heartBtn(this.id)">
 						
 						</td>
 					</tr>
@@ -103,7 +100,7 @@
 								<a id="musicName">아로하</a>
 								<a id="musicSinger">조정석</a>
 								<img src="images/play.png" alt="btnImages" class="playBtn" onclick="playBtn">
-								<img src="images/heart_e.png" alt="btnImages" class="heartBtn" onclick="heartBtn">
+								<img src="images/heart_e.png" id="aloha" alt="btnImages" class="heartBtn" onclick="heartBtn(this.id)">
 						
 						</td>
 					</tr>
@@ -115,7 +112,7 @@
 								<a id="musicName">에잇(Prod. & Feat. SUGA..</a>
 								<a id="musicSinger">아이유(IU)</a>
 								<img src="images/play.png" alt="btnImages" class="playBtn" onclick="playBtn">
-								<img src="images/heart.png" alt="btnImages" class="heartBtn" onclick="heartBtn">
+								<img src="images/heart_e.png" id="eight" alt="btnImages" class="heartBtn" onclick="heartBtn(this.id)">
 						
 						</td>
 					</tr>
@@ -127,7 +124,7 @@
 								<a id="musicName">Secret Garden(비밀정원)</a>
 								<a id="musicSinger">오마이걸(OH MY GIRL)</a>
 								<img src="images/play.png" alt="btnImages" class="playBtn" onclick="playBtn">
-								<img src="images/heart_e.png" alt="btnImages" class="heartBtn" onclick="heartBtn">
+								<img src="images/heart_e.png" id="secret" alt="btnImages" class="heartBtn" onclick="heartBtn(this.id)">
 						
 						</td>
 					</tr>
@@ -143,7 +140,7 @@
 								<a id="musicName"> Summer Hate (Feat. Rain..</a>
 								<a id="musicSinger">ZICO(지코)</a>
 								<img src="images/play.png" alt="btnImages" class="playBtn" onclick="playBtn">
-								<img src="images/heart_e.png" alt="btnImages" class="heartBtn" onclick="heartBtn">
+								<img src="images/heart_e.png" id="zico" alt="btnImages" class="heartBtn" onclick="heartBtn(this.id)">
 						
 						</td>
 					</tr>
@@ -155,7 +152,7 @@
 								<a id="musicName">FANCY</a>
 								<a id="musicSinger">TWICE(트와이스)</a>
 								<img src="images/play.png" alt="btnImages" class="playBtn" onclick="playBtn">
-								<img src="images/heart.png" alt="btnImages" class="heartBtn" onclick="heartBtn">
+								<img src="images/heart_e.png" id="fancy" alt="btnImages" class="heartBtn" onclick="heartBtn(this.id)">
 						
 						</td>
 					</tr>
@@ -167,7 +164,7 @@
 								<a id="musicName">PLAY(feat. 창모)</a>
 								<a id="musicSinger">청하</a>
 								<img src="images/play.png" alt="btnImages" class="playBtn" onclick="playBtn">
-								<img src="images/heart_e.png" alt="btnImages" class="heartBtn" onclick="heartBtn">
+								<img src="images/heart_e.png" id="play" alt="btnImages" class="heartBtn" onclick="heartBtn(this.id)">
 						
 						</td>
 					</tr>
@@ -179,7 +176,7 @@
 								<a id="musicName">FIESTA</a>
 								<a id="musicSinger">IZ*ONE(아이즈원)</a>
 								<img src="images/play.png" alt="btnImages" class="playBtn" onclick="playBtn">
-								<img src="images/heart_e.png" alt="btnImages" class="heartBtn" onclick="heartBtn">
+								<img src="images/heart_e.png" id="fiesta" alt="btnImages" class="heartBtn" onclick="heartBtn(this.id)">
 						
 						</td>
 					</tr>
@@ -191,7 +188,7 @@
 								<a id="musicName">HIP</a>
 								<a id="musicSinger">마마무(Mamamoo)</a>
 								<img src="images/play.png" alt="btnImages" class="playBtn" onclick="playBtn">
-								<img src="images/heart.png" alt="btnImages" class="heartBtn" onclick="heartBtn">
+								<img src="images/heart_e.png" id="hip" alt="btnImages" class="heartBtn" onclick="heartBtn(this.id)">
 						
 						</td>
 					</tr>
@@ -199,7 +196,63 @@
 			</div>
 		</section>	
 
+	<!-- Trigger/Open The Modal -->
+    <button id="myBtn">Open Modal</button>
+ 
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+ 
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>                                                               
+        <p>Some text in the Modal..</p>
+      </div>
+ 
+    </div>
+
+
+
 		<script>
+		
+        var modal = document.getElementById('myModal');
+        var btn = document.getElementById("myBtn");
+        var span = document.getElementsByClassName("close")[0];                                          
+ 
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+ 
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+ 
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+
+		function init() {
+			for ( var i = 0, len = localStorage.length; i < len; ++i ) {
+				var id = localStorage.getItem(localStorage.key( i ));
+				document.getElementById(id).src = "file:///C:/Users/rkdus/Desktop/GayeonMusic/images/heart.png";				
+			}
+		}
+		
+		function heartBtn(id){	
+			var value = document.getElementById(id).src;
+			
+			if(value == "file:///C:/Users/rkdus/Desktop/GayeonMusic/images/heart.png"){
+				document.getElementById(id).src = "file:///C:/Users/rkdus/Desktop/GayeonMusic/images/heart_e.png";
+				localStorage.removeItem(id);
+			}else{
+				document.getElementById(id).src = "file:///C:/Users/rkdus/Desktop/GayeonMusic/images/heart.png";
+				localStorage.setItem(id, id+"");
+			}
+		}
+		
+		
       // 2. This code loads the IFrame Player API code asynchronously.
       var tag = document.createElement('script');
 
