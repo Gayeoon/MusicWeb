@@ -75,7 +75,7 @@
 								<p id="musicNum">1</p>
 								<a id="musicName">다시 여기 바닷가</a>
 								<a id="musicSinger">싹쓰리(유두래곤&린다G&비룡)</a>
-								<img src="images/playbtn.png" alt="btnImages" class="playBtn" onclick="playBtn">
+								<img src="images/playbtn.png" id="again.mp3" alt="btnImages" class="playBtn"  onclick="playBtn(this.id)">
 								<img src="images/heart_e.png" id="again" alt="btnImages" class="heartBtn" onclick="heartBtn(this.id)">
 						
 						</td>
@@ -87,7 +87,7 @@
 								<p id="musicNum">2</p>
 								<a id="musicName">마리아 (Maria)</a>
 								<a id="musicSinger">화사(Hwa Sa)</a>
-								<img src="images/playbtn.png" alt="btnImages" class="playBtn" onclick="playBtn">
+								<img src="images/playbtn.png" id="maria.mp3" alt="btnImages" class="playBtn"  onclick="playBtn(this.id)">
 								<img src="images/heart_e.png" id="maria" alt="btnImages" class="heartBtn" onclick="heartBtn(this.id)">
 						
 						</td>
@@ -99,7 +99,7 @@
 								<p id="musicNum">3</p>
 								<a id="musicName">아로하</a>
 								<a id="musicSinger">조정석</a>
-								<img src="images/playbtn.png" alt="btnImages" class="playBtn" onclick="playBtn">
+								<img src="images/playbtn.png" id="aloha.mp3" alt="btnImages" class="playBtn"  onclick="playBtn(this.id)">
 								<img src="images/heart_e.png" id="aloha" alt="btnImages" class="heartBtn" onclick="heartBtn(this.id)">
 						
 						</td>
@@ -111,7 +111,7 @@
 								<p id="musicNum">4</p>
 								<a id="musicName">에잇(Prod. & Feat. SUGA..</a>
 								<a id="musicSinger">아이유(IU)</a>
-								<img src="images/playbtn.png" alt="btnImages" class="playBtn" onclick="playBtn">
+								<img src="images/playbtn.png" id="eight.mp3" alt="btnImages" class="playBtn"  onclick="playBtn(this.id)">
 								<img src="images/heart_e.png" id="eight" alt="btnImages" class="heartBtn" onclick="heartBtn(this.id)">
 						
 						</td>
@@ -123,7 +123,7 @@
 								<p id="musicNum">5</p>
 								<a id="musicName">Secret Garden(비밀정원)</a>
 								<a id="musicSinger">오마이걸(OH MY GIRL)</a>
-								<img src="images/playbtn.png" alt="btnImages" class="playBtn" onclick="playBtn">
+								<img src="images/playbtn.png" id="secret.mp3" alt="btnImages" class="playBtn"  onclick="playBtn(this.id)">
 								<img src="images/heart_e.png" id="secret" alt="btnImages" class="heartBtn" onclick="heartBtn(this.id)">
 						
 						</td>
@@ -139,7 +139,7 @@
 								<p id="musicNum">6</p>
 								<a id="musicName"> Summer Hate (Feat. Rain..</a>
 								<a id="musicSinger">ZICO(지코)</a>
-								<img src="images/playbtn.png" alt="btnImages" class="playBtn" onclick="playBtn">
+								<img src="images/playbtn.png" id="zico.mp3" alt="btnImages" class="playBtn"  onclick="playBtn(this.id)">
 								<img src="images/heart_e.png" id="zico" alt="btnImages" class="heartBtn" onclick="heartBtn(this.id)">
 						
 						</td>
@@ -151,7 +151,7 @@
 								<p id="musicNum">8</p>
 								<a id="musicName">FANCY</a>
 								<a id="musicSinger">TWICE(트와이스)</a>
-								<img src="images/playbtn.png" alt="btnImages" class="playBtn" onclick="playBtn">
+								<img src="images/playbtn.png" id="fancy.mp3" alt="btnImages" class="playBtn"  onclick="playBtn(this.id)">
 								<img src="images/heart_e.png" id="fancy" alt="btnImages" class="heartBtn" onclick="heartBtn(this.id)">
 						
 						</td>
@@ -163,7 +163,7 @@
 								<p id="musicNum">7</p>
 								<a id="musicName">PLAY(feat. 창모)</a>
 								<a id="musicSinger">청하</a>
-								<img src="images/playbtn.png" alt="btnImages" class="playBtn" onclick="playBtn">
+								<img src="images/playbtn.png" id="ha.mp3" alt="btnImages" class="playBtn"  onclick="playBtn(this.id)">
 								<img src="images/heart_e.png" id="ha" alt="btnImages" class="heartBtn" onclick="heartBtn(this.id)">
 						
 						</td>
@@ -175,7 +175,7 @@
 								<p id="musicNum">9</p>
 								<a id="musicName">FIESTA</a>
 								<a id="musicSinger">IZ*ONE(아이즈원)</a>
-								<img src="images/playbtn.png" alt="btnImages" class="playBtn" onclick="playBtn">
+								<img src="images/playbtn.png" id="fiesta.mp3" alt="btnImages" class="playBtn"  onclick="playBtn(this.id)">
 								<img src="images/heart_e.png" id="fiesta" alt="btnImages" class="heartBtn" onclick="heartBtn(this.id)">
 						
 						</td>
@@ -207,7 +207,11 @@
 			<img id="album" src="images/again_d.png"/>
 		</div>
 		
-		<audio id="myAudio"> <source src="music/again.mp3" type='audio/mp3'> <source src="http://media.w3.org/2010/07/bunny/04-Death_Becomes_Fur.oga" type='audio/ogg; codecs=vorbis'> Your user agent does not support the HTML5 Audio element. </audio> 
+		<audio id="myAudio"> 
+			<source id="audio" src="music/again.mp3" type='audio/mp3'> 
+			<source src="http://media.w3.org/2010/07/bunny/04-Death_Becomes_Fur.oga" type='audio/ogg; codecs=vorbis'> 
+				Your user agent does not support the HTML5 Audio element. 
+		</audio> 
 		
 		<div class = "footer">		
 			<img id="back" src="images/background.png"/>
@@ -276,6 +280,7 @@
 					myAudio.pause(); 
 				} 
 			}else{
+				myAudio.load();
 				myAudio.volume = 0.1;
 				myAudio.currentTime = 0;
 				myAudio.play();
@@ -286,8 +291,13 @@
         var modal = document.getElementById('myModal');
         var btn = document.getElementById("myBtn");
         var span = document.getElementById("close");                                          
+		var album = document.getElementById("album");
+		var audio = document.getElementById("audio");
+		var dic = {'again.mp3':'again', 'maria.mp3':'maria', 'aloha.mp3':'aloha', 'eight.mp3':'eight', 'secret.mp3':'secret', 'zico.mp3':'zico', 'fancy.mp3':'fancy', 'ha.mp3':'play', 'fiesta.mp3':'fiesta', 'hip.mp3':'hip'};
 		
 		function playBtn(id){
+			album.src = "file:///C:/Users/rkdus/Desktop/GayeonMusic/images/"+dic[id]+"_d.png";
+			audio.src = "file:///C:/Users/rkdus/Desktop/GayeonMusic/music/"+dic[id]+".mp3";
 			playPause(3);
 			modal.style.display = "block";
 		}	
