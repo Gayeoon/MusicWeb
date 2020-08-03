@@ -88,7 +88,9 @@ nav ul li a:hover {
 }
 
 .MVstyle header {
+	width:100%;
 	float:left;
+	text-align:left;
 	font-family: nanum_ebold;
 	font-size: 1.5em; 
 	color: #555f66;
