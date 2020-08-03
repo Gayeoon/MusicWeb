@@ -247,11 +247,11 @@
 			if(flag){
 				flag = false;
 				var re = document.getElementById('replay');
-				re.src = "file:///C:/Users/rkdus/Desktop/GayeonMusic/images/replay.png";			
+				re.src = "images/replay.png";			
 			}else{
 				flag = true;
 				var re = document.getElementById('replay');
-				re.src = "file:///C:/Users/rkdus/Desktop/GayeonMusic/images/re_play.png";			
+				re.src = "images/re_play.png";			
 			}
 		}
 		
@@ -270,10 +270,10 @@
 			if(flag == 1){
 				if (myAudio.paused) {
 					myAudio.play(); 
-					play.src = "file:///C:/Users/rkdus/Desktop/GayeonMusic/images/pause.png";
+					play.src = "images/pause.png";
 				} else { 
 					myAudio.pause(); 
-					play.src = "file:///C:/Users/rkdus/Desktop/GayeonMusic/images/play.png";
+					play.src = "images/play.png";
 				} 
 			}else if(flag ==2){
 				if (myAudio.played) {
@@ -281,10 +281,10 @@
 				} 
 			}else{
 				myAudio.load();
-				myAudio.volume = 0.1;
+				myAudio.volume = 0.5;
 				myAudio.currentTime = 0;
 				myAudio.play();
-				play.src = "file:///C:/Users/rkdus/Desktop/GayeonMusic/images/pause.png";
+				play.src = "images/pause.png";
 			}
 		}
 		
@@ -296,8 +296,8 @@
 		var dic = {'again.mp3':'again', 'maria.mp3':'maria', 'aloha.mp3':'aloha', 'eight.mp3':'eight', 'secret.mp3':'secret', 'zico.mp3':'zico', 'fancy.mp3':'fancy', 'ha.mp3':'play', 'fiesta.mp3':'fiesta', 'hip.mp3':'hip'};
 		
 		function playBtn(id){
-			album.src = "file:///C:/Users/rkdus/Desktop/GayeonMusic/images/"+dic[id]+"_d.png";
-			audio.src = "file:///C:/Users/rkdus/Desktop/GayeonMusic/music/"+dic[id]+".mp3";
+			album.src = "images/"+dic[id]+"_d.png";
+			audio.src = "music/"+dic[id]+".mp3";
 			playPause(3);
 			modal.style.display = "block";
 		}	
@@ -309,7 +309,6 @@
         }
 
 		function close() {
-			alert("fhk");
 			playPause(2);
             modal.style.display = "none";
 		}
@@ -317,18 +316,17 @@
 		function init() {
 			for ( var i = 0, len = localStorage.length; i < len; ++i ) {
 				var id = localStorage.getItem(localStorage.key( i ));
-				document.getElementById(id).src = "file:///C:/Users/rkdus/Desktop/GayeonMusic/images/heart.png";				
+				document.getElementById(id).src = "images/heart.png";				
 			}
 		}
 		
 		function heartBtn(id){	
 			var value = document.getElementById(id).src;
-			
-			if(value == "file:///C:/Users/rkdus/Desktop/GayeonMusic/images/heart.png"){
-				document.getElementById(id).src = "file:///C:/Users/rkdus/Desktop/GayeonMusic/images/heart_e.png";
+			if(value == "https://gayeonland.site/GayeonMusic/images/heart.png"){
+				document.getElementById(id).src = "images/heart_e.png";
 				localStorage.removeItem(id);
 			}else{
-				document.getElementById(id).src = "file:///C:/Users/rkdus/Desktop/GayeonMusic/images/heart.png";
+				document.getElementById(id).src = "images/heart.png";
 				localStorage.setItem(id, id+"");
 			}
 		}
