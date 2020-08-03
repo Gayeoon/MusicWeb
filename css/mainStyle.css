@@ -354,11 +354,7 @@ nav ul li a:hover {
 	top: 12%
 }
 
-/* input type 디자인 바꾸기 */
-.customizing article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-   display: block;
-}
+
 
 article {
     width: 150px;
