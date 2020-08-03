@@ -204,7 +204,7 @@
 
       <!-- Modal content -->
       <div class="modal-content">
-		<span class="close">&times;</span> 
+		<span id="close" onclick="close()">&times;</span> 
 		
 		<div style="width:100%; height:100%; position: relative;">
 			<img id="album" src="images/again_d.png"/>
@@ -288,17 +288,12 @@
 		
         var modal = document.getElementById('myModal');
         var btn = document.getElementById("myBtn");
-        var span = document.getElementsByClassName("close")[0];                                          
+        var span = document.getElementById("close");                                          
 		
 		function playBtn(id){
 			playPause(3);
 			modal.style.display = "block";
-		}		
-        span.onclick = function() {
-			playPause(2);
-            modal.style.display = "none";
-        }
- 
+		}	
         window.onclick = function(event) {
             if (event.target == modal) {
 				playPause(2);
@@ -306,7 +301,12 @@
             }
         }
 
-
+		function close() {
+			alert("fhk");
+			playPause(2);
+            modal.style.display = "none";
+		}
+		
 		function init() {
 			for ( var i = 0, len = localStorage.length; i < len; ++i ) {
 				var id = localStorage.getItem(localStorage.key( i ));
